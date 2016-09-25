@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag @apartment.image.url(:medium) %>  <!--Add this to display your image-->
+
 <p>
   <strong>Latitude:</strong>
   <%= @apartment.latitude %>

@@ -90,6 +90,6 @@ render json: @hash.to_json
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def apartment_params
-      params.require(:apartment).permit(:latitude, :longitude, :address, :street, :city, :postal_code, :state, :country, :owner_name, :phone, :hours)
+      params.require(:apartment).permit(:latitude, :longitude, :address, :street, :city, :postal_code, :state, :country, :owner_name, :phone, :hours, :image)
     end
 end
