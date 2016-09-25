@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Apartments</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Address</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>Postal code</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Landlord name</th>
+      <th>Contact number</th>
+      <th>Hours</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apartments.each do |apartment| %>
+      <tr>
+        <td><%= apartment.latitude %></td>
+        <td><%= apartment.longitude %></td>
+        <td><%= apartment.address %></td>
+        <td><%= apartment.street %></td>
+        <td><%= apartment.city %></td>
+        <td><%= apartment.postal_code %></td>
+        <td><%= apartment.state %></td>
+        <td><%= apartment.country %></td>
+        <td><%= apartment.landlord_name %></td>
+        <td><%= apartment.contact_number %></td>
+        <td><%= apartment.hours %></td>
+        <td><%= link_to 'Show', apartment %></td>
+        <td><%= link_to 'Edit', edit_apartment_path(apartment) %></td>
+        <td><%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Apartment', new_apartment_path %>
+
+<hr/>
+<div id="map_all">Google map will appear here...</div>
+<script type="text/javascript">
+handler = Gmaps.build('Google');
+handler.buildMap({
+  provider: {styles: [
+      {
+        "weight": 1.5
+      },
+  {
+    "featureType": "landscape.man_made",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "landscape.natural",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  }
+]}, //added google maps custom styling to show terrain
+  internal: {id: 'map_all'}},
+  function(){
+  markers = handler.addMarkers(<%=raw @pindrop.to_json %>);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+});
+</script>

@@ -1,0 +1,13 @@
+#map {
+  height :400px;
+  width :1150px;
+}
+
+#map_all {
+  height :400px;
+  width :1150px;
+}
+ body {
+   background-color: #fdf4cd;
+   font-family: 'Baloo Bhai', cursive;
+ }
