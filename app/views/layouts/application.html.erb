@@ -58,12 +58,19 @@
         <%= msg %>
       <% end %>
     <% end %>
-      <!--Devise flash message-->
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <!--Adding path for new user registration and sign in-->
-      <%= link_to "Sign Up", new_user_registration_path %>
-      <%= link_to "Sign In", new_user_session_path %>
+    
+      
+      <!--Adding sign out link-->
+      <% if user_signed_in? %>
+        logged in as <strong><%= current_user.email %></strong><br>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        <!--Adding path for new user registration and sign in-->
+      <% else %>
+        <%= link_to "Sign Up", new_user_registration_path %>
+        <%= link_to "Sign In", new_user_session_path %>
+      <% end %>
+      
+
     <%= yield %>
   </div>
 </body>
