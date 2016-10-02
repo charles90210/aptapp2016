@@ -10,68 +10,97 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+  
+<form class="form-horizontal">
+  <div class="form-group">
+    <%= f.label :image, class: "col-sm-2 control-label" %><br>
+    <div class="col-sm-10">
+      <%= f.file_field :image %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :latitude %>
-    <%= f.text_field :latitude %>
+  <div class = "form-group">
+      <%= f.label :latitude, class: "col-sm-2 control-label" %><br>
+      <div class="col-sm-10">
+      <%= f.text_field :latitude %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :longitude %>
+  <div class = "form-group">
+  <%= f.label :longitude, class: "col-sm-2 control-label" %><br>
+  <div class="col-sm-10">
     <%= f.text_field :longitude %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
+<div class = "form-group">
+<%= f.label :address, class: "col-sm-2 control-label" %><br>
+<div class="col-sm-10">
+  <%= f.text_field :address %>
+</div>
+</div>
 
-  <div class="field">
-    <%= f.label :street %>
+
+<div class = "form-group">
+  <%= f.label :street, class: "col-sm-2 control-label" %><br>
+  <div class="col-sm-10">
     <%= f.text_field :street %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :city %>
+<div class = "form-group">
+  <%= f.label :city, class: "col-sm-2 control-label" %><br>
+  <div class="col-sm-10">
     <%= f.text_field :city %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :postal_code %>
+<div class = "form-group">
+  <%= f.label :postal_code, class: "col-sm-2 control-label" %><br>
+  <div class="col-sm-10">
     <%= f.text_field :postal_code %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :state %>
+<div class = "form-group">
+  <%= f.label :state, class: "col-sm-2 control-label" %><br>
+  <div class="col-sm-10">
     <%= f.text_field :state %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :country %>
+<div class = "form-group">
+  <%= f.label :country, class: "col-sm-2 control-label" %><br>
+  <div class="col-sm-10">
     <%= f.text_field :country %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :landlord_name %>
+<div class = "form-group">
+  <%= f.label :landlord_name, class: "col-sm-2 control-label" %><br>
+  <div class="col-sm-10">
     <%= f.text_field :landlord_name %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :contact_number %>
+<div class = "form-group">
+  <%= f.label :contact_number, class: "col-sm-2 control-label" %><br>
+  <div class="col-sm-10">
     <%= f.text_field :contact_number %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :hours %>
+<div class = "form-group">
+  <%= f.label :hours, class: "col-sm-2 control-label" %><br>
+  <div class="col-sm-10">
     <%= f.text_field :hours %>
   </div>
+</div><br>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+  <%= f.submit class: "btn btn-warning" %>
+</div>
+</div>
+</form>
 <% end %>
