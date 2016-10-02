@@ -1,5 +1,7 @@
 class ApartmentsController < ApplicationController
   before_action :set_apartment, only: [:show, :edit, :update, :destroy]
+#Setting up our page so that non signed in users cannot edit or destroy apartment listings
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /apartments
   # GET /apartments.json
@@ -34,7 +36,7 @@ render json: @hash.to_json
 
   # GET /apartments/new
   def new
-    @apartment = Apartment.new
+    @apartment = current_user.apartments.build
   end
 
   # GET /apartments/1/edit
@@ -45,7 +47,7 @@ render json: @hash.to_json
   # POST /apartments
   # POST /apartments.json
   def create
-    @apartment = Apartment.new(apartment_params)
+    @apartment = current_user.apartments.build(apartment_params)
 
     respond_to do |format|
       if @apartment.save

@@ -2,6 +2,8 @@
 
 <h1>Apartments</h1>
 
+
+
 <table class="table">
   <thead>
     <tr>
@@ -16,6 +18,7 @@
       <th>Landlord name</th>
       <th>Contact number</th>
       <th>Hours</th>
+      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -34,10 +37,14 @@
         <td><%= apartment.landlord_name %></td>
         <td><%= apartment.contact_number %></td>
         <td><%= apartment.hours %></td>
+        <td><%= apartment.user.email %></td>
         <td><%= image_tag apartment.image.url(:thumb) %></td> <!--Adds thumbnail images to list screen-->
         <td><%= link_to 'Show', apartment %></td>
-        <td><%= link_to 'Edit', edit_apartment_path(apartment) %></td>
-        <td><%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!--Prevents anyone who is not signed in from seeing the edit and destroy button-->
+        <% if apartment.user == current_user %>
+          <td><%= link_to 'Edit', edit_apartment_path(apartment) %></td>
+          <td><%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

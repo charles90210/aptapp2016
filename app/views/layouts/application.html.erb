@@ -58,7 +58,12 @@
         <%= msg %>
       <% end %>
     <% end %>
-
+      <!--Devise flash message-->
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <!--Adding path for new user registration and sign in-->
+      <%= link_to "Sign Up", new_user_registration_path %>
+      <%= link_to "Sign In", new_user_session_path %>
     <%= yield %>
   </div>
 </body>
