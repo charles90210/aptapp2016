@@ -58,7 +58,9 @@
         <%= msg %>
       <% end %>
     <% end %>
-
+      <!--Devise flash message-->
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     <%= yield %>
   </div>
 </body>

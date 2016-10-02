@@ -51,6 +51,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+#Added bootstarp and google maps gems
 gem 'bootstrap-generators', '~> 3.3.4'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'geocoder'
@@ -58,4 +59,8 @@ gem 'gmaps4rails'
 gem 'poltergeist'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#Added paperclip gem
 gem "paperclip", "~> 5.0.0"
+#Added devise gem
+gem 'devise'
+
