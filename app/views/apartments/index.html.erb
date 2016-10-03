@@ -37,7 +37,7 @@
         <td><%= apartment.landlord_name %></td>
         <td><%= apartment.contact_number %></td>
         <td><%= apartment.hours %></td>
-        <td><%= apartment.user.email %></td>
+        <td><%= apartment.user.username %></td>
         <td><%= image_tag apartment.image.url(:thumb) %></td> <!--Adds thumbnail images to list screen-->
         <td><%= link_to 'Show', apartment %></td>
         <!--Prevents anyone who is not signed in from seeing the edit and destroy button-->
