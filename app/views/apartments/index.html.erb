@@ -37,10 +37,11 @@
         <td><%= apartment.landlord_name %></td>
         <td><%= apartment.contact_number %></td>
         <td><%= apartment.hours %></td>
-        <td><%= apartment.user.email %></td>
+        <td><%= apartment.user.username %></td>
         <td><%= image_tag apartment.image.url(:thumb) %></td> <!--Adds thumbnail images to list screen-->
         <td><%= link_to 'Show', apartment %></td>
         <!--Prevents anyone who is not signed in from seeing the edit and destroy button-->
+        <!--restricts access so that only the user who created an apartment casn delete or edit it-->
         <% if apartment.user == current_user %>
           <td><%= link_to 'Edit', edit_apartment_path(apartment) %></td>
           <td><%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' } %></td>

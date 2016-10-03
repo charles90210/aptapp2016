@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
+  
+  root 'apartments#index'
+  
   resources :apartments do
     get 'map_location'
   end
-  root 'apartments#index'
+  
+  devise_for :users, controllers: { registrations: "registrations"}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
